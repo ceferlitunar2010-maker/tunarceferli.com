@@ -53,6 +53,7 @@
     .skills{display:flex;gap:8px;flex-wrap:wrap}
     .skill{background:rgba(255,255,255,0.03);padding:7px 10px;border-radius:8px;font-weight:600}
     .fit{word-wrap:break-word;overflow-wrap:break-word}
+    input, textarea{color:#EAF2FF}
   </style>
 </head>
 <body>
@@ -70,11 +71,13 @@
         <a class="nav-link" href="#skills">Bacarıqlar</a>
         <a class="nav-link" href="#work">Layihələr</a>
         <a class="nav-link" href="#contact">Əlaqə</a>
+        <a class="nav-link" href="#feedback">Təklif & İstək</a>
         <a class="cta" href="#contact">Əlaqə saxla</a>
       </nav>
     </header>
 
     <main>
+      <!-- Hero -->
       <section class="hero">
         <div class="hero-card">
           <h1 class="title">Salam, mən <span style="color:var(--blue-500)">Tunar Cəfərli</span></h1>
@@ -98,11 +101,13 @@
         </aside>
       </section>
 
+      <!-- Haqqımda -->
       <section id="about" class="hero-card" style="margin-top:18px">
         <h3>Haqqımda</h3>
         <p class="fit">Mənim məqsədim güclü texniki bacarıqlarla həm frontend, həm backend layihələrində iştirak etməkdir. HTML, CSS və JavaScript üzərində çalışıram.</p>
       </section>
 
+      <!-- Bacarıqlar -->
       <section id="skills" style="margin-top:18px">
         <h3>Bacarıqlar</h3>
         <div class="grid-3" style="margin-top:12px">
@@ -121,6 +126,7 @@
         </div>
       </section>
 
+      <!-- Layihələr -->
       <section id="work" style="margin-top:18px">
         <h3>Layihələr</h3>
         <div style="display:flex;flex-direction:column;gap:12px;margin-top:12px">
@@ -129,24 +135,35 @@
         </div>
       </section>
 
+      <!-- Kontakt Forması -->
       <section id="contact" style="margin-top:18px" class="hero-card">
         <h3>Əlaqə</h3>
         <p class="muted">Aşağıdakı formanı doldur və ya birbaşa e-poçt göndər.</p>
 
         <form id="contactForm" style="margin-top:12px;display:grid;gap:10px;max-width:640px">
-          <input id="name" type="text" placeholder="Ad" required
-                 style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-weight:600" />
-          <input id="email" type="email" placeholder="E-poçt" required
-                 style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-weight:600" />
-          <textarea id="message" placeholder="Mesaj" rows="4" required
-                 style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-weight:600"></textarea>
+          <input id="name" type="text" placeholder="Ad" required/>
+          <input id="email" type="email" placeholder="E-poçt" required/>
+          <textarea id="message" placeholder="Mesaj" rows="4" required></textarea>
 
           <div style="display:flex;gap:8px;flex-wrap:wrap">
             <button type="submit" class="cta">Göndər</button>
             <a class="nav-link" href="mailto:ceferlitunar2010@gmail.com?subject=Portfolio">Birbaşa e-poçt</a>
           </div>
-
           <div id="formMsg" style="color:var(--muted);font-size:14px"></div>
+        </form>
+      </section>
+
+      <!-- Təklif & İstək Forması -->
+      <section id="feedback" style="margin-top:30px" class="hero-card">
+        <h3>Təklif və İstəklər</h3>
+        <p class="muted">Aşağıdakı formanı dolduraraq sayt və xidmətlə bağlı təkliflərinizi göndərə bilərsiniz.</p>
+
+        <form id="feedbackForm" style="margin-top:12px;display:grid;gap:10px;max-width:640px">
+          <input id="fbName" type="text" placeholder="Ad və Soyad" required/>
+          <input id="fbEmail" type="email" placeholder="E-poçt" required/>
+          <textarea id="fbMessage" placeholder="Təklif və istəkləriniz..." rows="4" required></textarea>
+          <button type="submit" class="cta">Göndər</button>
+          <div id="fbMsg" style="color:var(--muted);font-size:14px"></div>
         </form>
       </section>
     </main>
@@ -159,7 +176,7 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Kontakt forması işləyir
+    // Kontakt forması
     const form = document.getElementById('contactForm');
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -172,20 +189,4 @@
         return;
       }
       const subject = encodeURIComponent('Portfolio əlaqə: ' + name);
-      const body = encodeURIComponent('Ad: ' + name + '\nE-poçt: ' + email + '\n\n' + msg);
-      window.location.href = `mailto:ceferlitunar2010@gmail.com?subject=${subject}&body=${body}`;
-    });
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',(e)=>{
-        const href = a.getAttribute('href');
-        if(href.length>1){
-          e.preventDefault();
-          document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+      const body = encodeURIComponent('Ad: ' +
