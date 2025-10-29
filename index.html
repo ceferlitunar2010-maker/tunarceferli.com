@@ -1,1 +1,148 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tunar Cəfərli — IT Mütəxəssisi</title>
+  <meta name="description" content="Tunar Cəfərli — IT mütəxəssisi portfolio səhifəsi." />
+  <style>
+    :root{
+      --blue-900:#012A4A;
+      --blue-700:#0366A6;
+      --blue-500:#0B84FF;
+      --muted:#667085;
+      --card: rgba(255,255,255,0.03);
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, Arial; background: linear-gradient(180deg,var(--blue-900) 0%, #001f3f 100%); color:#EAF2FF; -webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none}
+    .container{width:94%;max-width:1100px;margin:0 auto;padding:28px 0}
+
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--blue-700),var(--blue-500));display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:20px}
+    nav{display:flex;gap:18px;align-items:center}
+    .nav-link{padding:8px 12px;border-radius:10px;font-weight:500;color:rgba(234,242,255,0.9)}
+    .nav-link:hover{background:rgba(255,255,255,0.04)}
+    .cta{background:linear-gradient(90deg,var(--blue-500),var(--blue-700));padding:10px 14px;border-radius:12px;font-weight:700;color:white}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:30px;align-items:center;padding:40px 0}
+    .hero-card{background:var(--card);padding:28px;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.03)}
+    .title{font-size:28px;margin:0 0 8px;line-height:1.05}
+    .subtitle{color:var(--muted);margin:0 0 18px}
+    .badges{display:flex;gap:8px;flex-wrap:wrap}
+    .badge{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:999px;font-weight:600}
+
+    .profile{display:flex;flex-direction:column;gap:12px;align-items:center}
+    .avatar{width:100%;max-width:320px;border-radius:16px;overflow:hidden;border:2px solid rgba(255,255,255,0.04);background:linear-gradient(135deg,var(--blue-700),var(--blue-500));display:flex;align-items:center;justify-content:center;padding:26px}
+    .contact{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+    .chip{background:var(--card);padding:8px 12px;border-radius:999px;font-weight:600;color:#EAF2FF}
+
+    section{margin-top:26px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    h3{margin:0 0 10px}
+    p{margin:0;color:var(--muted);line-height:1.5}
+
+    footer{padding:28px 0;color:var(--muted);text-align:center}
+
+    @media (max-width:980px){.hero{grid-template-columns:1fr;}.grid-3{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:600px){header{padding-bottom:8px} nav{display:none} .hero{gap:18px} .grid-3{grid-template-columns:1fr} .title{font-size:22px}}
+    .muted{color:var(--muted)}
+    .skills{display:flex;gap:8px;flex-wrap:wrap}
+    .skill{background:rgba(255,255,255,0.03);padding:7px 10px;border-radius:8px;font-weight:600}
+    .fit{word-wrap:break-word;overflow-wrap:break-word}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">TC</div>
+        <div>
+          <div style="font-weight:800">Tunar Cəfərli</div>
+          <div style="font-size:13px;color:var(--muted);margin-top:2px">Gələcəkdə IT mütəxəssisi</div>
+        </div>
+      </div>
+      <nav>
+        <a class="nav-link" href="#about">Haqqımda</a>
+        <a class="nav-link" href="#skills">Bacarıqlar</a>
+        <a class="nav-link" href="#work">Layihələr</a>
+        <a class="nav-link" href="#contact">Əlaqə</a>
+        <a class="cta" href="#contact">Əlaqə saxla</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card">
+          <h1 class="title">Salam, mən <span style="color:var(--blue-500)">Tunar Cəfərli</span></h1>
+          <p class="subtitle fit">Mən öyrənməyə və praktiki layihələr yaratmağa böyük həvəsli gəncəm. Frontend, backend, və infrastruktur üzrə biliklər qazanmaq istəyirəm.</p>
+          <div style="margin-top:18px" class="badges">
+            <div class="badge">HTML</div>
+            <div class="badge">CSS</div>
+            <div class="badge">JavaScript</div>
+            <div class="badge">Git</div>
+            <div class="badge">Linux</div>
+          </div>
+        </div>
+
+        <aside class="profile">
+          <div class="avatar">TC</div>
+          <div class="contact">
+            <div class="chip">Bakı, Azərbaycan</div>
+            <div class="chip">tunar@example.com</div>
+            <div class="chip">+994 XX XXX XX XX</div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about" class="hero-card" style="margin-top:18px">
+        <h3>Haqqımda</h3>
+        <p class="fit">Mənim məqsədim güclü texniki bacarıqlarla həm frontend, həm backend layihələrində iştirak etməkdir. HTML, CSS və JavaScript üzərində çalışıram.</p>
+      </section>
+
+      <section id="skills" style="margin-top:18px">
+        <h3>Bacarıqlar</h3>
+        <div class="grid-3" style="margin-top:12px">
+          <div class="card">
+            <h4>Frontend</h4>
+            <p class="muted">HTML, CSS, JavaScript, responsive dizayn.</p>
+          </div>
+          <div class="card">
+            <h4>Backend & Database</h4>
+            <p class="muted">Node.js, Express, SQL (öyrənilir).</p>
+          </div>
+          <div class="card">
+            <h4>Alətlər</h4>
+            <p class="muted">Git, GitHub, Linux, VS Code.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" style="margin-top:18px">
+        <h3>Layihələr</h3>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:12px">
+          <div class="card"><strong>Portfolio sayt —</strong> Sadə və sürətli şəxsiy portfolio.</div>
+          <div class="card"><strong>Tapşırıq layihəsi —</strong> JavaScript ilə mini oyun.</div>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:18px" class="hero-card">
+        <h3>Əlaqə</h3>
+        <p class="muted">Aşağıdakı formanı doldur və ya birbaşa e-poçt göndər.</p>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Tunar Cəfərli — Bütün hüquqlar qorunur.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
