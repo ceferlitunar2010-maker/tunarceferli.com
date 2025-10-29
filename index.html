@@ -15,7 +15,7 @@
       --radius:14px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, Arial; background: linear-gradient(180deg,var(--blue-900) 0%, #001f3f 100%); color:#EAF2FF; -webkit-font-smoothing:antialiased;}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; background: linear-gradient(180deg,var(--blue-900) 0%, #001f3f 100%); color:#EAF2FF; -webkit-font-smoothing:antialiased;}
     a{color:inherit;text-decoration:none}
     .container{width:94%;max-width:1100px;margin:0 auto;padding:28px 0}
 
@@ -132,6 +132,22 @@
       <section id="contact" style="margin-top:18px" class="hero-card">
         <h3>Əlaqə</h3>
         <p class="muted">Aşağıdakı formanı doldur və ya birbaşa e-poçt göndər.</p>
+
+        <form id="contactForm" style="margin-top:12px;display:grid;gap:10px;max-width:640px">
+          <input id="name" type="text" placeholder="Ad" required
+                 style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-weight:600" />
+          <input id="email" type="email" placeholder="E-poçt" required
+                 style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-weight:600" />
+          <textarea id="message" placeholder="Mesaj" rows="4" required
+                 style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-weight:600"></textarea>
+
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button type="submit" class="cta">Göndər</button>
+            <a class="nav-link" href="mailto:ceferlitunar2010@gmail.com?subject=Portfolio">Birbaşa e-poçt</a>
+          </div>
+
+          <div id="formMsg" style="color:var(--muted);font-size:14px"></div>
+        </form>
       </section>
     </main>
 
@@ -142,7 +158,34 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Kontakt forması işləyir
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      const info = document.getElementById('formMsg');
+      if (!name || !email || !msg) {
+        info.textContent = 'Zəhmət olmasa bütün sahələri doldurun.';
+        return;
+      }
+      const subject = encodeURIComponent('Portfolio əlaqə: ' + name);
+      const body = encodeURIComponent('Ad: ' + name + '\nE-poçt: ' + email + '\n\n' + msg);
+      window.location.href = `mailto:ceferlitunar2010@gmail.com?subject=${subject}&body=${body}`;
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',(e)=>{
+        const href = a.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      });
+    });
   </script>
 </body>
 </html>
-
