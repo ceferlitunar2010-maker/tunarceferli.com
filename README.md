@@ -8,47 +8,37 @@
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #5D9FFF, #B8DCFF);
-      color: #fff;
+      color: white;
       text-align: center;
       margin: 0;
       padding: 0;
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       animation: fadeIn 1.5s ease-in-out;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     h1 {
-      font-size: 42px;
+      font-size: 40px;
       margin-bottom: 10px;
     }
 
     p {
       font-size: 18px;
-      color: #f5f5f5;
-      margin-bottom: 30px;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(5px);
-      padding: 20px;
-      border-radius: 15px;
-      width: 80%;
-      max-width: 500px;
-      margin: 0 auto 30px auto;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
+      margin-bottom: 20px;
     }
 
     button {
@@ -57,9 +47,9 @@
       border: none;
       padding: 10px 20px;
       border-radius: 8px;
-      cursor: pointer;
       font-size: 16px;
-      transition: all 0.3s ease;
+      cursor: pointer;
+      transition: 0.3s;
     }
 
     button:hover {
@@ -68,21 +58,18 @@
     }
 
     footer {
-      margin-top: 40px;
+      position: absolute;
+      bottom: 10px;
       font-size: 14px;
-      color: #eee;
+      color: #f0f0f0;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Salam, mən Tunar Cəfərliyəm 👋</h1>
-    <p>Bu mənim ilk şəxsi saytımdır! Hazırda kodlaşdırma öyrənirəm 💻</p>
-    <button onclick="alert('Tunarla əlaqə üçün: example@gmail.com')">Əlaqə</button>
-  </div>
+  <h1>Salam, mən Tunar Cəfərliyəm 👋</h1>
+  <p>Bu mənim ilk şəxsi saytımdır — kodlaşdırma öyrənirəm 💻</p>
+  <button onclick="alert('Əlaqə: tunar@example.com')">Əlaqə üçün</button>
 
-  <footer>
-    <p>© 2025 Tunar Cəfərli | GitHub Pages ilə yaradılıb</p>
-  </footer>
+  <footer>© 2025 Tunar Cəfərli | GitHub Pages</footer>
 </body>
 </html>
