@@ -54,9 +54,8 @@
       <a class="nav-link" href="#about">Haqqımda</a>
       <a class="nav-link" href="#skills">Bacarıqlar</a>
       <a class="nav-link" href="#work">Layihələr</a>
-      <a class="nav-link" href="#contact">Əlaqə</a>
       <a class="nav-link" href="#feedback">Təklif & İstək</a>
-      <a class="cta" href="#contact">Əlaqə saxla</a>
+      <a class="cta" href="#feedback">Göndər</a>
     </nav>
   </header>
 
@@ -113,17 +112,6 @@
       </div>
     </section>
 
-    <section id="contact" class="hero-card">
-      <h3>Əlaqə</h3>
-      <p>Doldur və ya birbaşa e-poçt göndər.</p>
-      <form id="contactForm" style="display:grid; gap:10px; max-width:640px;">
-        <input id="name" type="text" placeholder="Ad" required/>
-        <input id="email" type="email" placeholder="E-poçt" required/>
-        <textarea id="message" placeholder="Mesaj" rows="4" required></textarea>
-        <button type="submit" class="cta">Göndər</button>
-      </form>
-    </section>
-
     <section id="feedback" class="hero-card">
       <h3>Təklif və İstəklər</h3>
       <p>Sayt və xidmətlə bağlı təkliflərinizi göndərə bilərsiniz.</p>
@@ -142,15 +130,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    document.getElementById('contactForm').addEventListener('submit', e=>{
-      e.preventDefault();
-      const name=document.getElementById('name').value.trim();
-      const email=document.getElementById('email').value.trim();
-      const msg=document.getElementById('message').value.trim();
-      if(!name||!email||!msg){alert('Zəhmət olmasa bütün sahələri doldurun.'); return;}
-      window.location.href=`mailto:ceferlitunar2010@gmail.com?subject=Portfolio əlaqə: ${encodeURIComponent(name)}&body=${encodeURIComponent(msg + '\n\nE-poçt: ' + email)}`;
-    });
 
     document.getElementById('feedbackForm').addEventListener('submit', e=>{
       e.preventDefault();
